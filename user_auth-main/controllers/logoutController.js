@@ -7,7 +7,7 @@ const fsPromises = require('fs').promises
 const path = require('path')
 
 
-const handleLogout = (req, res) => {
+const handleLogout = async (req, res) => {
     const cookies = req.cookies;
     if (!cookies?.jwt) return res.sendStatus(204) 
     const refreshToken = cookies.jwt;
